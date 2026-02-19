@@ -13,28 +13,34 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: "GitHub Page of dracorp"
-#email: your-email@example.com
-#description: >-
-baseurl: "" # the subpath of your site, e.g. /blog
+# --- GŁÓWNE USTAWIENIA ---
+title: "dracorp's pages"
+description: "My github blog about various things"
 url: "https://dracorp.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-#twitter_username: jekyllrb
+baseurl: "" # the subpath of your site, e.g. /blog
+favicon: favicon.png # ikonę wrzuć do głównego folderu repozytorium pod tą nazwą (najlepiej rozdzielczość 192x192 albo 512x512)
 github_username:  dracorp
 
-# Build settings
-markdown: kramdown
-theme: minima
-plugins:
-  - jekyll-feed
+# --- MOTYW ---
+# theme: minima
+remote_theme: riggraz/no-style-please
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+# --- USTAWIENIA LINKÓW ---
+permalink: /:title/ # Takie permalinki są zgodne ze standardem Wordpress, co później ułatwi ewentualną migrację istniejącego bloga z WP
+
+# --- WTYCZKI ---
+plugins:
+    - jekyll-feed
+    - jekyll-seo-tag
+    - jekyll-remote-theme
+    - jekyll-sitemap
+
+# --- DANE AUTORA ---
+author:
+    name: Piotr Rogoża # Wypełni wedle uznania
+
+# --- USTAWIENIA MARKDOWN ---
+markdown: kramdown
+kramdown:
+    input: GFM
+    syntax_highlighter: rouge
